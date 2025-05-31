@@ -179,7 +179,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            The rapid advancement of Artificial Intelligence Generated Content (AIGC) has produced hyper-realistic synthetic media, raising concerns about authenticity and integrity[cite: 1, 2]. Current detection methods are often black-box, lack interpretability, and don't support unified image and video detection, hindering transparency and deployment[cite: 3, 4]. To address this, we introduce <strong>IVY-FAKE</strong>, a large-scale, unified dataset for explainable multimodal AIGC detection with over 150,000 annotated training samples and 18,700 evaluation examples, each with natural-language reasoning[cite: 5, 6]. We also propose <strong>IVY-XDETECTOR</strong>, a unified vision-language model for state-of-the-art explainable detection of both image and video content[cite: 7, 8]. Our dataset is publicly available[cite: 9].
+            The rapid advancement of Artificial Intelligence Generated Content (AIGC) has produced hyper-realistic synthetic media, raising concerns about authenticity and integrity. Current detection methods are often black-box, lack interpretability, and don't support unified image and video detection, hindering transparency and deployment. To address this, we introduce <strong>IVY-FAKE</strong>, a large-scale, unified dataset for explainable multimodal AIGC detection with over 150,000 annotated training samples and 18,700 evaluation examples, each with natural-language reasoning. We also propose <strong>IVY-XDETECTOR</strong>, a unified vision-language model for state-of-the-art explainable detection of both image and video content. Our dataset is publicly available.
           </p>
         </div>
       </div>
@@ -194,10 +194,10 @@
         <h2 class="title is-3">1. Introduction</h2>
         <div class="content has-text-justified">
           <p>
-            Advancements in AIGC, driven by models like DALL-E, Imagen, Stable Diffusion, and SORA, have led to highly realistic synthetic images and videos, posing challenges to content authenticity and public trust[cite: 10, 11, 12, 13]. Most current AIGC detection methods are binary classifiers with limited interpretability and often lack support for diverse generators or modalities[cite: 18, 19, 20, 21]. While Multimodal Large Language Models (MLLMs) show promise for explainable detection, existing benchmarks are inadequate, often lacking video data or sufficient annotation depth[cite: 22, 23, 24, 25, 26, 27, 28].
+            Advancements in AIGC, driven by models like DALL-E, Imagen, Stable Diffusion, and SORA, have led to highly realistic synthetic images and videos, posing challenges to content authenticity and public trust. Most current AIGC detection methods are binary classifiers with limited interpretability and often lack support for diverse generators or modalities. While Multimodal Large Language Models (MLLMs) show promise for explainable detection, existing benchmarks are inadequate, often lacking video data or sufficient annotation depth.
           </p>
           <p>
-            To overcome these limitations, we introduce <strong>IVY-FAKE</strong>, a comprehensive benchmark with diverse multimodal data (94,781 images, 54,967 videos for training) and rich, explainable annotations[cite: 29, 30, 31]. Building on this, our <strong>IVY-XDETECTOR</strong> model excels at identifying and explaining spatial and temporal generative artifacts in both images and videos[cite: 32, 33, 34]. Our key contributions are a unified vision-language detector and the first large-scale benchmark for explainable multimodal AIGC detection[cite: 35, 36, 37].
+            To overcome these limitations, we introduce <strong>IVY-FAKE</strong>, a comprehensive benchmark with diverse multimodal data (94,781 images, 54,967 videos for training) and rich, explainable annotations. Building on this, our <strong>IVY-XDETECTOR</strong> model excels at identifying and explaining spatial and temporal generative artifacts in both images and videos. Our key contributions are a unified vision-language detector and the first large-scale benchmark for explainable multimodal AIGC detection.
           </p>
         </div>
       </div>
@@ -212,10 +212,10 @@
         <h2 class="title is-3">2. Related Work</h2>
         <div class="content has-text-justified">
           <p>
-            Research in AIGC detection has grown due to concerns about synthetic data misuse. Many existing models classify content as "real" or "fake" but often overlook interpretability, providing explanations that are hard for humans to understand, especially for video artifacts[cite: 38, 39, 40, 41, 42, 43, 44, 45]. While some VLMs offer image-level interpretability, a unified framework for both images and videos is lacking[cite: 46].
+            Research in AIGC detection has grown due to concerns about synthetic data misuse. Many existing models classify content as "real" or "fake" but often overlook interpretability, providing explanations that are hard for humans to understand, especially for video artifacts. While some VLMs offer image-level interpretability, a unified framework for both images and videos is lacking.
           </p>
           <p>
-            Early datasets focused on GAN-generated images, but advanced models like diffusion models produce more challenging content[cite: 47, 48]. Newer datasets have emerged, but many are image-centric or, if they include explainability, lack video data or sufficient scale for comprehensive training[cite: 49, 50, 51, 52, 53, 54]. There's a clear need for a unified benchmark covering both image and video modalities with explainability[cite: 55].
+            Early datasets focused on GAN-generated images, but advanced models like diffusion models produce more challenging content. Newer datasets have emerged, but many are image-centric or, if they include explainability, lack video data or sufficient scale for comprehensive training. There's a clear need for a unified benchmark covering both image and video modalities with explainability.
           </p>
         </div>
       </div>
@@ -240,7 +240,7 @@
           </p>
           <div class="has-text-centered" style="margin-top:1em; margin-bottom:1em;">
             <img src="static/images/figure2-data-static-v2_00.png" alt="IVY-FAKE Dataset Overview" style="max-width: 90%; height: auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-            <p class="is-size-7"><i>Figure 2: Overview of the IVY-FAKE dataset creation process showing data domains, labeling prompts, and annotation structure[cite: 60].</i></p>
+            <p class="is-size-7"><i>Figure 2: Overview of the IVY-FAKE dataset creation process showing data domains, labeling prompts, and annotation structure.</i></p>
           </div>
         </div>
       </div>
