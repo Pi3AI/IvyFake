@@ -9,7 +9,7 @@
   <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
   <meta property="og:url" content="URL OF THE WEBSITE"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image" content="static/image/figure1-poster-v2_00.png" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
@@ -23,7 +23,7 @@
   <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Academic Project Page</title>
+  <title>Ivy-xDetector</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -42,6 +42,11 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  
 </head>
 <body>
 
@@ -56,28 +61,30 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Changjiang Jiang</a><sup>*</sup>,</span>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">*Wenhui Dong</a><sup>1</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Wenhui Dong</a><sup>*</sup>,</span>
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">*Changjiang Jiang</a><sup>2</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Zhonghao Zhang</a><sup>*</sup>,</span>
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Zhonghao Zhang</a><sup>1</sup>,</span>
                   <span class="author-block">
-                    <a href="Fourth AUTHOR PERSONAL LINK" target="_blank">Fengchang Yu</a><sup>*</sup>,</span>
+                    <a href="Fourth AUTHOR PERSONAL LINK" target="_blank">Fengchang Yu</a><sup>2</sup>,</span>
                   <span class="author-block">
-                    <a href="Fifth AUTHOR PERSONAL LINK" target="_blank">Wei Peng</a><sup>*</sup>,</span>
+                    <a href="Fifth AUTHOR PERSONAL LINK" target="_blank">Wei Peng</a><sup>3</sup>,</span>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block"><sup>1</sup>\(\pi^3\) AI Lab</span><br/>
+                    <sup>2</sup>Wuhan University<br/>
+                    <sup>3</sup>Stanford University<br/>
+                    <sup>*</sup>Equal Contribution
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://openreview.net/attachment?id=RIBj1KPAWM&name=pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -88,7 +95,7 @@
 
                     <!-- Supplementary PDF link -->
                     <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      <a href="static/pdfs/Generation_Detection_NeurIPS_2025_appendix__me2_.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
@@ -99,12 +106,22 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/Pi3AI/IvyFake" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- Hugging Face link -->
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/AI-Safeguard/Ivy-Fake" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" style="height: 1.1em;">
+                    </span>
+                    <span>Hugging Face</span>
                   </a>
                 </span>
 
@@ -130,21 +147,31 @@
 <!-- Teaser video-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+    <div class="hero-body has-text-centered">
+      <img src="static/images/figure1-poster-v2_00.png" alt="Teaser Image" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+      <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+        Overview of the IVY-FAKE framework: By conducting in-depth analysis of temporal and spatial artifacts, the framework enables explainable detection of AI-generated content
       </h2>
     </div>
   </div>
 </section>
 <!-- End teaser video -->
 
-<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">IVY-FAKE Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            <strong>IVY-FAKE</strong> is the first unified benchmark and explainable framework for detecting AI-generated images and videos. It provides over 150,000 annotated training samples and 18,700 evaluation examples, each paired with human-readable explanations. We introduce <strong>IVY-XDETECTOR</strong>, a vision-language model capable of multimodal AIGC detection with high accuracy and transparency. Our approach offers detailed spatial and temporal reasoning, enabling robust identification of synthetic content in real-world scenarios.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -152,14 +179,119 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            The rapid advancement of Artificial Intelligence Generated Content (AIGC) has produced hyper-realistic synthetic media, raising concerns about authenticity and integrity[cite: 1, 2]. Current detection methods are often black-box, lack interpretability, and don't support unified image and video detection, hindering transparency and deployment[cite: 3, 4]. To address this, we introduce <strong>IVY-FAKE</strong>, a large-scale, unified dataset for explainable multimodal AIGC detection with over 150,000 annotated training samples and 18,700 evaluation examples, each with natural-language reasoning[cite: 5, 6]. We also propose <strong>IVY-XDETECTOR</strong>, a unified vision-language model for state-of-the-art explainable detection of both image and video content[cite: 7, 8]. Our dataset is publicly available[cite: 9].
           </p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End paper abstract -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">1. Introduction</h2>
+        <div class="content has-text-justified">
+          <p>
+            Advancements in AIGC, driven by models like DALL-E, Imagen, Stable Diffusion, and SORA, have led to highly realistic synthetic images and videos, posing challenges to content authenticity and public trust[cite: 10, 11, 12, 13]. Most current AIGC detection methods are binary classifiers with limited interpretability and often lack support for diverse generators or modalities[cite: 18, 19, 20, 21]. While Multimodal Large Language Models (MLLMs) show promise for explainable detection, existing benchmarks are inadequate, often lacking video data or sufficient annotation depth[cite: 22, 23, 24, 25, 26, 27, 28].
+          </p>
+          <p>
+            To overcome these limitations, we introduce <strong>IVY-FAKE</strong>, a comprehensive benchmark with diverse multimodal data (94,781 images, 54,967 videos for training) and rich, explainable annotations[cite: 29, 30, 31]. Building on this, our <strong>IVY-XDETECTOR</strong> model excels at identifying and explaining spatial and temporal generative artifacts in both images and videos[cite: 32, 33, 34]. Our key contributions are a unified vision-language detector and the first large-scale benchmark for explainable multimodal AIGC detection[cite: 35, 36, 37].
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">2. Related Work</h2>
+        <div class="content has-text-justified">
+          <p>
+            Research in AIGC detection has grown due to concerns about synthetic data misuse. Many existing models classify content as "real" or "fake" but often overlook interpretability, providing explanations that are hard for humans to understand, especially for video artifacts[cite: 38, 39, 40, 41, 42, 43, 44, 45]. While some VLMs offer image-level interpretability, a unified framework for both images and videos is lacking[cite: 46].
+          </p>
+          <p>
+            Early datasets focused on GAN-generated images, but advanced models like diffusion models produce more challenging content[cite: 47, 48]. Newer datasets have emerged, but many are image-centric or, if they include explainability, lack video data or sufficient scale for comprehensive training[cite: 49, 50, 51, 52, 53, 54]. There's a clear need for a unified benchmark covering both image and video modalities with explainability[cite: 55].
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">3. IVY-FAKE Dataset</h2>
+        <div class="content has-text-justified">
+          <p>
+            The <strong>IVY-FAKE dataset</strong> is designed for explainable multimodal AIGC detection, containing 94,781 training images, 54,967 training videos, and around 18,700 total test samples. It features diverse content (animals, objects, DeepFakes, etc.) and sources (GANs, Diffusion models, Transformers) and is kept current by collecting new AIGC content.
+          </p>
+          <p>
+             Video data (approx. 110,000 clips) was sourced from public benchmarks like GenVideo and LOKI, and web-crawled platforms, including outputs from models like SORA and Stable Video Diffusion. Image data (approx. 110,000 images) was similarly collected from public datasets like FakeClue and WildFake, and web sources, covering GANs and Diffusion models. A stratified sampling strategy ensures balanced representation.
+          </p>
+          <p>
+            Explainable annotations were generated using Gemini 2.5 Pro with a knowledge distillation process and a structured template requiring reasoning before conclusion (<code>&lt;think&gt;...&lt;/think&gt;&lt;conclusion&gt;...&lt;/conclusion&gt;</code>). Gemini was provided with ground-truth labels and a prompt like "This {file_type} is {label}. Explain the reason.". Explanations are categorized into Spatial Features (8 sub-dimensions) and Temporal Features (4 sub-dimensions, video-only). IVY-FAKE uniquely integrates explainable annotations across both image and video modalities, unlike prior datasets which are often limited in scope or modality.
+          </p>
+          <div class="has-text-centered" style="margin-top:1em; margin-bottom:1em;">
+            <img src="static/images/figure2-data-static-v2_00.png" alt="IVY-FAKE Dataset Overview" style="max-width: 90%; height: auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <p class="is-size-7"><i>Figure 2: Overview of the IVY-FAKE dataset creation process showing data domains, labeling prompts, and annotation structure[cite: 60].</i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">4. Methodology: IVY-XDETECTOR</h2>
+        <div class="content has-text-justified">
+          <p>
+            This chapter details the IVY-XDETECTOR, a multimodal large language model designed for robust and explainable AIGC detection. The architecture, based on the LLaVA paradigm and initialized with Ivy-VL-LLaVA weights, consists of a Visual Encoder (SigLIP), a Visual Projector, and a Large Language Model. It supports dynamic high-resolution image inputs and processes video frames while preserving temporal information. The model is trained using a progressive three-stage framework: initial video understanding, fine-tuning for AIGC detection, and joint optimization for both detection accuracy and high-quality, human-understandable explanations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">5. Experiments</h2>
+        <div class="content has-text-justified">
+          <p>
+            This section describes the extensive experiments conducted to evaluate the detection and explanation capabilities of the IVY-XDETECTOR. The model was tested on classification tasks (distinguishing real from fake content) for both images and videos, using metrics like accuracy and F1-score. Reasoning abilities were assessed by comparing model-generated explanations with reference annotations using ROUGE-L scores and an LLM-as-a-judge approach (evaluating completeness, relevance, detail, and explanation quality). The proposed method demonstrated superior performance on various benchmarks for both image and video content classification and produced more transparent reasoning compared to several leading multimodal models.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">6. Conclusion</h2>
+        <div class="content has-text-justified">
+          <p>
+            The paper introduces IVY-FAKE, the first unified, large-scale dataset for explainable AI-Generated Content (AIGC) detection across both images and videos, featuring extensive annotated samples with natural-language reasoning. Accompanying this, the Ivy Explainable Detector (IVY-XDETECTOR) is proposed, a vision-language architecture that jointly detects and explains synthetic content. The model sets new state-of-the-art benchmarks in AIGC detection and explainability, and the publicly released resources aim to provide a robust foundation for transparent and trustworthy multimodal analysis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- Image carousel -->
@@ -169,32 +301,25 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/figure2-data-static-v2_00.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          First image description.
+          Overview of the proposed unified and explainable IVY-FAKE dataset. Input images or videos from diverse domains are processed alongside specific prompts by an MLLM. The model leverages temporal and spatial analysis to produce structured, explainable annotations
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/figure4-Ivy-Fake_00.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          Second image description.
+          Overview of the three-stage training pipeline for Ivy-Detector, including general video understanding, detection instruction tuning, and interpretability instruction tuning.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/figure5-vis_00.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-         Third image description.
+         Showcase of the Video artifact detection.
        </h2>
      </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
   </div>
 </div>
 </div>
@@ -203,86 +328,15 @@
 
 
 
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>@article{jiang2025ivyfake,
+  title     = {Ivy-Fake: A Unified Explainable Framework and Benchmark for Image and Video AIGC Detection},
+  author    = {Jiang, Changjiang and Dong, Wenhui and Zhang, Zhonghao and Yu, Fengchang and Peng, Wei},
+  year      = {2025},
+}</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
@@ -293,7 +347,6 @@
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
