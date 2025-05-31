@@ -4,9 +4,9 @@
 [![Hugging Face Datasets](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Datasets-blue)](https://huggingface.co/datasets/AI-Safeguard/Ivy-Fake)
 [![GitHub Code](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Pi3AI/IvyFake) [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
 
-**Ivy-Fake** is a novel, unified, and large-scale dataset specifically designed for explainable multimodal AI-Generated Content (AIGC) detection. It is the first large-scale benchmark for this purpose, covering both images and videos. [cite: 1, 5] The project also introduces **Ivy-XDetector**, a unified vision-language model that achieves state-of-the-art performance in detecting and explaining AI-generated images and videos. [cite: 7, 8]
+**Ivy-Fake** is a novel, unified, and large-scale dataset specifically designed for explainable multimodal AI-Generated Content (AIGC) detection. It is the first large-scale benchmark for this purpose, covering both images and videos. The project also introduces **Ivy-XDetector**, a unified vision-language model that achieves state-of-the-art performance in detecting and explaining AI-generated images and videos.
 
-The rapid advancement of AIGC has led to hyper-realistic synthetic media, raising significant concerns about authenticity and misinformation. [cite: 1] Current detection methods often operate as black-box classifiers, lacking interpretability and unified support for different modalities. [cite: 3] Ivy-Fake addresses these limitations by providing a comprehensive benchmark and an explainable detection framework.
+The rapid advancement of AIGC has led to hyper-realistic synthetic media, raising significant concerns about authenticity and misinformation. [cite: 1] Current detection methods often operate as black-box classifiers, lacking interpretability and unified support for different modalities. Ivy-Fake addresses these limitations by providing a comprehensive benchmark and an explainable detection framework.
 
 ## Key Features
 
