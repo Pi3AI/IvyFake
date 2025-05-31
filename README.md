@@ -31,7 +31,7 @@ The **IVY-XDETECTOR** model follows a three-stage progressive training framework
 
 ### Dataset Access
 The Ivy-Fake dataset can be accessed on Hugging Face:
-[https://huggingface.co/datasets/AI-Safeguard/Ivy-Fake](https://huggingface.co/datasets/AI-Safeguard/Ivy-Fake) [cite: 9]
+[https://huggingface.co/datasets/AI-Safeguard/Ivy-Fake](https://huggingface.co/datasets/AI-Safeguard/Ivy-Fake)
 
 ### Code
 The code for the IVY-XDETECTOR and related experiments can be found in this repository:
