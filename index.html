@@ -166,6 +166,9 @@
           <p>
             <strong>IVY-FAKE</strong> is the first unified benchmark and explainable framework for detecting AI-generated images and videos. It provides over 150,000 annotated training samples and 18,700 evaluation examples, each paired with human-readable explanations. We introduce <strong>IVY-XDETECTOR</strong>, a vision-language model capable of multimodal AIGC detection with high accuracy and transparency. Our approach offers detailed spatial and temporal reasoning, enabling robust identification of synthetic content in real-world scenarios.
           </p>
+          <p>
+            The rapid advancement of Artificial Intelligence Generated Content (AIGC) has produced hyper-realistic synthetic media, raising concerns about authenticity and integrity. Current detection methods are often black-box, lack interpretability, and don't support unified image and video detection, hindering transparency and deployment. To address this, we introduce <strong>IVY-FAKE</strong>, a large-scale, unified dataset for explainable multimodal AIGC detection with over 150,000 annotated training samples and 18,700 evaluation examples, each with natural-language reasoning. We also propose <strong>IVY-XDETECTOR</strong>, a unified vision-language model for state-of-the-art explainable detection of both image and video content.
+          </p>
         </div>
       </div>
     </div>
@@ -179,7 +182,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            The rapid advancement of Artificial Intelligence Generated Content (AIGC) has produced hyper-realistic synthetic media, raising concerns about authenticity and integrity. Current detection methods are often black-box, lack interpretability, and don't support unified image and video detection, hindering transparency and deployment. To address this, we introduce <strong>IVY-FAKE</strong>, a large-scale, unified dataset for explainable multimodal AIGC detection with over 150,000 annotated training samples and 18,700 evaluation examples, each with natural-language reasoning. We also propose <strong>IVY-XDETECTOR</strong>, a unified vision-language model for state-of-the-art explainable detection of both image and video content. Our dataset is publicly available.
+            The rapid advancement of Artificial Intelligence Generated Content (AIGC) has produced hyper-realistic synthetic media, raising concerns about authenticity and integrity. Current detection methods are often black-box, lack interpretability, and don't support unified image and video detection, hindering transparency and deployment. To address this, we introduce <strong>IVY-FAKE</strong>, a large-scale, unified dataset for explainable multimodal AIGC detection with over 150,000 annotated training samples and 18,700 evaluation examples, each with natural-language reasoning. We also propose <strong>IVY-XDETECTOR</strong>, a unified vision-language model for state-of-the-art explainable detection of both image and video content.
           </p>
         </div>
       </div>
@@ -191,7 +194,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">1. Introduction</h2>
+        <h2 class="title is-3">Introduction</h2>
         <div class="content has-text-justified">
           <p>
             Advancements in AIGC, driven by models like DALL-E, Imagen, Stable Diffusion, and SORA, have led to highly realistic synthetic images and videos, posing challenges to content authenticity and public trust. Most current AIGC detection methods are binary classifiers with limited interpretability and often lack support for diverse generators or modalities. While Multimodal Large Language Models (MLLMs) show promise for explainable detection, existing benchmarks are inadequate, often lacking video data or sufficient annotation depth.
@@ -205,29 +208,11 @@
   </div>
 </section>
 
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">2. Related Work</h2>
-        <div class="content has-text-justified">
-          <p>
-            Research in AIGC detection has grown due to concerns about synthetic data misuse. Many existing models classify content as "real" or "fake" but often overlook interpretability, providing explanations that are hard for humans to understand, especially for video artifacts. While some VLMs offer image-level interpretability, a unified framework for both images and videos is lacking.
-          </p>
-          <p>
-            Early datasets focused on GAN-generated images, but advanced models like diffusion models produce more challenging content. Newer datasets have emerged, but many are image-centric or, if they include explainability, lack video data or sufficient scale for comprehensive training. There's a clear need for a unified benchmark covering both image and video modalities with explainability.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">3. IVY-FAKE Dataset</h2>
+        <h2 class="title is-3">IVY-FAKE Dataset</h2>
         <div class="content has-text-justified">
           <p>
             The <strong>IVY-FAKE dataset</strong> is designed for explainable multimodal AIGC detection, containing 94,781 training images, 54,967 training videos, and around 18,700 total test samples. It features diverse content (animals, objects, DeepFakes, etc.) and sources (GANs, Diffusion models, Transformers) and is kept current by collecting new AIGC content.
@@ -252,7 +237,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">4. Methodology: IVY-XDETECTOR</h2>
+        <h2 class="title is-3">Methodology: IVY-XDETECTOR</h2>
         <div class="content has-text-justified">
           <p>
             This chapter details the IVY-XDETECTOR, a multimodal large language model designed for robust and explainable AIGC detection. The architecture, based on the LLaVA paradigm and initialized with Ivy-VL-LLaVA weights, consists of a Visual Encoder (SigLIP), a Visual Projector, and a Large Language Model. It supports dynamic high-resolution image inputs and processes video frames while preserving temporal information. The model is trained using a progressive three-stage framework: initial video understanding, fine-tuning for AIGC detection, and joint optimization for both detection accuracy and high-quality, human-understandable explanations.
@@ -267,7 +252,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">5. Experiments</h2>
+        <h2 class="title is-3">Experiments</h2>
         <div class="content has-text-justified">
           <p>
             This section describes the extensive experiments conducted to evaluate the detection and explanation capabilities of the IVY-XDETECTOR. The model was tested on classification tasks (distinguishing real from fake content) for both images and videos, using metrics like accuracy and F1-score. Reasoning abilities were assessed by comparing model-generated explanations with reference annotations using ROUGE-L scores and an LLM-as-a-judge approach (evaluating completeness, relevance, detail, and explanation quality). The proposed method demonstrated superior performance on various benchmarks for both image and video content classification and produced more transparent reasoning compared to several leading multimodal models.
@@ -282,7 +267,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">6. Conclusion</h2>
+        <h2 class="title is-3">Conclusion</h2>
         <div class="content has-text-justified">
           <p>
             The paper introduces IVY-FAKE, the first unified, large-scale dataset for explainable AI-Generated Content (AIGC) detection across both images and videos, featuring extensive annotated samples with natural-language reasoning. Accompanying this, the Ivy Explainable Detector (IVY-XDETECTOR) is proposed, a vision-language architecture that jointly detects and explains synthetic content. The model sets new state-of-the-art benchmarks in AIGC detection and explainability, and the publicly released resources aim to provide a robust foundation for transparent and trustworthy multimodal analysis.
