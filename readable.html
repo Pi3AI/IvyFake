@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IVY-FAKE: 统一可解释AIGC检测框架交互式报告</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Visualization & Content Choices: 
+        - The Challenge: Goal: Inform. Method: Interactive cards with icons. Interaction: Hover effects. Justification: Visually breaks down complex problems into digestible pieces.
+        - The Dataset: Goal: Inform. Method: Dynamic stat counters (HTML/JS) and a simplified process diagram (HTML/CSS). Justification: Highlights the scale and novelty of the dataset in a more engaging way than plain text.
+        - The Model: Goal: Organize. Method: A clickable 3-stage diagram (HTML/JS). Interaction: Clicking a stage reveals details. Justification: Simplifies the complex training methodology into an understandable, interactive flow.
+        - Performance Dashboard: Goal: Compare. Method: Interactive bar charts (Chart.js/Canvas). Interaction: Buttons to switch between Image/Video benchmarks and filters for specific generators. Justification: This is the most effective way to present comparative quantitative data. It allows users to directly compare performance across various conditions, a task that is tedious with static tables.
+        - Explainability Section: Goal: Compare/Inform. Method: Side-by-side card layout comparing text outputs. Justification: Directly showcases the qualitative superiority of the model's explanations, which is a core claim of the paper.
+        - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. All visuals are created with HTML/CSS/Canvas. -->
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #F8F7F6; /* Warm neutral background */
+            color: #1C1917;
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1C1917;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: #57534E;
+            text-align: center;
+            max-width: 48rem;
+            margin: 0 auto 3rem auto;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s;
+            cursor: pointer;
+            background-color: #E7E5E4;
+            color: #57534E;
+        }
+        .tab-btn.active {
+            background-color: #4338CA; /* Subtle accent */
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(67, 56, 202, 0.39);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">IVY-FAKE 论文交互式解读</h1>
+            <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">一个统一、可解释的框架，迎战图像与视频AIGC检测的新前沿</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="challenge" class="py-16">
+            <h2 class="section-title">当前AIGC检测面临的挑战</h2>
+            <p class="section-subtitle">随着AIGC技术日益逼真，传统的检测方法遇到了瓶颈。这些挑战不仅限制了技术的可靠性，也影响了公众的信任。</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card text-center">
+                    <div class="text-4xl mb-4">📦</div>
+                    <h3 class="text-xl font-bold mb-2">“黑箱”操作，可解释性差</h3>
+                    <p class="text-gray-600">多数模型仅输出“真/假”结论，却无法解释原因，如同一个无法窥探内部的黑箱，难以建立信任。</p>
+                </div>
+                <div class="card text-center">
+                    <div class="text-4xl mb-4">🧩</div>
+                    <h3 class="text-xl font-bold mb-2">缺乏统一的多模态框架</h3>
+                    <p class="text-gray-600">图像和视频的检测方法各自为战，缺乏一个能够同时高效处理两种模态的统一解决方案。</p>
+                </div>
+                <div class="card text-center">
+                    <div class="text-4xl mb-4">💾</div>
+                    <h3 class="text-xl font-bold mb-2">高质量数据集稀缺</h3>
+                    <p class="text-gray-600">现有数据集在规模、多样性，特别是可解释性标注方面存在巨大鸿沟，限制了更先进模型的开发。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="py-16 bg-white rounded-2xl">
+            <h2 class="section-title">研究核心方案：数据集与模型</h2>
+            <p class="section-subtitle">为应对上述挑战，本研究提出了一个双管齐下的解决方案：一个全新的大规模可解释性数据集IVY-FAKE，以及一个统一的检测模型IVY-XDETECTOR。</p>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">IVY-FAKE: 大规模可解释性数据集</h3>
+                    <p class="text-gray-600 mb-6">IVY-FAKE是首个专为可解释、多模态AIGC检测设计的大规模基准，其规模和标注深度远超以往。它为训练更透明、更可信的AI模型提供了坚实的数据基础。</p>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="p-4 bg-gray-100 rounded-lg">
+                            <p class="text-3xl font-bold text-indigo-600" id="stat-samples">150k+</p>
+                            <p class="text-sm text-gray-500">带标注训练样本</p>
+                        </div>
+                        <div class="p-4 bg-gray-100 rounded-lg">
+                             <p class="text-3xl font-bold text-indigo-600" id="stat-eval">18k+</p>
+                            <p class="text-sm text-gray-500">评估样本</p>
+                        </div>
+                        <div class="p-4 bg-gray-100 rounded-lg">
+                             <p class="text-3xl font-bold text-indigo-600" id="stat-dims">12</p>
+                            <p class="text-sm text-gray-500">种伪影特征维度</p>
+                        </div>
+                        <div class="p-4 bg-gray-100 rounded-lg">
+                             <p class="text-3xl font-bold text-indigo-600" id="stat-modalities">2</p>
+                            <p class="text-sm text-gray-500">种核心模态(图/视频)</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">IVY-XDETECTOR: 统一检测模型</h3>
+                    <p class="text-gray-600 mb-6">该模型是一个统一的视觉语言架构，能同时检测图像和视频中的AI生成痕迹，并以自然语言形式解释其判断依据。其训练过程分为三个渐进式阶段，确保了强大的检测与解释能力。</p>
+                    <div id="training-stages" class="space-y-4">
+                        <div class="stage-item p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-indigo-50" data-stage="1">
+                            <p class="font-bold">阶段一: 赋予视频理解能力</p>
+                            <p class="text-sm text-gray-500 hidden stage-desc">通过大规模视频-文本对数据进行预训练，让模型具备基础的视频内容理解能力。</p>
+                        </div>
+                        <div class="stage-item p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-indigo-50" data-stage="2">
+                            <p class="font-bold">阶段二: AIGC检测微调</p>
+                             <p class="text-sm text-gray-500 hidden stage-desc">利用特定的AIGC数据集进行微调，训练模型专注于“真/假”二元分类任务，提升检测精度。</p>
+                        </div>
+                        <div class="stage-item p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-indigo-50" data-stage="3">
+                            <p class="font-bold">阶段三: 检测与可解释性联合优化</p>
+                             <p class="text-sm text-gray-500 hidden stage-desc">将检测任务与解释生成任务相结合进行联合训练，使模型在保持高检测精度的同时，学会生成高质量的、人类可理解的解释。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="performance" class="py-16">
+            <h2 class="section-title">性能深度解读</h2>
+            <p class="section-subtitle">IVY-XDETECTOR在多个权威基准上展现了卓越的性能，远超现有方法。通过下面的交互式图表，直观地探索其在不同场景下的表现。</p>
+            
+            <div class="flex justify-center space-x-4 mb-8">
+                <button id="btn-image" class="tab-btn active">图像检测性能</button>
+                <button id="btn-video" class="tab-btn">视频检测性能</button>
+            </div>
+
+            <div id="image-performance" class="performance-content">
+                <div class="chart-container">
+                    <canvas id="imageDetectionChart"></canvas>
+                </div>
+                <p class="text-center mt-4 text-sm text-gray-500">在GenImage基准上的平均准确率对比。</p>
+            </div>
+
+            <div id="video-performance" class="performance-content hidden">
+                 <div class="chart-container">
+                    <canvas id="videoDetectionChart"></canvas>
+                </div>
+                <p class="text-center mt-4 text-sm text-gray-500">在GenVideo基准上对不同视频生成器的F1分数对比。</p>
+            </div>
+        </section>
+
+        <section id="explainability" class="py-16 bg-white rounded-2xl">
+            <h2 class="section-title">可解释性：不止“真假”，更有“为何”</h2>
+            <p class="section-subtitle">IVY-XDETECTOR的核心优势在于其可解释性。它不仅能判断内容的真伪，还能像专家一样，详细指出“破绽”所在，提供清晰、有逻辑的判断依据。</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-2">其他模型 (如GPT-4V) 的分析</h3>
+                    <p class="text-sm text-gray-500 mb-4">通常无法识别出细微的合成痕迹，倾向于认为图像真实。</p>
+                    <div class="p-4 bg-red-50 text-red-700 rounded-md">
+                        <p class="font-mono text-sm">"&lt;think&gt; ...光照看起来很一致... 家具摆放合理... 没有明显的数字操纵痕迹... 图像看起来是真实的。 &lt;/think&gt; &lt;conclusion&gt; real &lt;/conclusion&gt;"</p>
+                    </div>
+                </div>
+                <div class="card border-2 border-indigo-500">
+                    <h3 class="font-bold text-lg mb-2">IVY-XDETECTOR 的分析</h3>
+                    <p class="text-sm text-gray-500 mb-4">能精准捕捉到常人难以察觉的伪影，例如物体过于完美、缺乏自然变化等。</p>
+                    <div class="p-4 bg-green-50 text-green-700 rounded-md">
+                        <p class="font-mono text-sm">"&lt;think&gt; ...灯光看起来很均匀，但酒瓶和架子的完美对齐显得不自然... 缺乏真实世界摄影中的微小瑕疵和变化... 图像呈现出合成指纹。 &lt;/think&gt; &lt;conclusion&gt; fake &lt;/conclusion&gt;"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="py-16">
+            <h2 class="section-title">结论与行业影响</h2>
+            <p class="section-subtitle">IVY-FAKE项目为AIGC检测领域贡献了里程碑式的工作，其价值体现在三个层面。</p>
+            <div class="max-w-4xl mx-auto space-y-6">
+                 <div class="card">
+                    <h3 class="text-xl font-bold mb-2">🚀 推动可信AI发展</h3>
+                    <p class="text-gray-600">可解释的检测结果是构建用户信任的基石。这项工作为遏制虚假信息、保护数字内容生态提供了强大的技术武器，是迈向可信AI生态的关键一步。</p>
+                </div>
+                 <div class="card">
+                    <h3 class="text-xl font-bold mb-2">💡 启发统一框架新思路</h3>
+                    <p class="text-gray-600">IVY-XDETECTOR成功验证了构建统一框架处理多模态任务的可行性与巨大潜力，将启发更多针对图像和视频的联合处理与分析模型。</p>
+                </div>
+                 <div class="card">
+                    <h3 class="text-xl font-bold mb-2">📈 数据集驱动行业进步</h3>
+                    <p class="text-gray-600">高质量、大规模、标注丰富的基准数据集是AI领域发展的核心燃料。IVY-FAKE的公开发布无疑将催化AIGC检测和可解释性研究的浪潮。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 AI技术前沿解读。基于《IVY-FAKE》论文的交互式报告。</p>
+        </div>
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Data from the paper
+    const imageDetectionData = {
+        labels: ['CNNSpot', 'F3Net', 'DIRE', 'GenDet', 'PatchCraft', 'AIDE', 'IVY-Det (Ours)'],
+        datasets: [{
+            label: '在 GenImage 上的平均准确率 (%)',
+            data: [64.21, 68.69, 70.66, 81.56, 82.30, 86.88, 98.36],
+            backgroundColor: [
+                'rgba(191, 191, 191, 0.6)',
+                'rgba(191, 191, 191, 0.6)',
+                'rgba(191, 191, 191, 0.6)',
+                'rgba(191, 191, 191, 0.6)',
+                'rgba(191, 191, 191, 0.6)',
+                'rgba(191, 191, 191, 0.6)',
+                'rgba(67, 56, 202, 0.8)'
+            ],
+            borderColor: [
+                'rgba(150, 150, 150, 1)',
+                'rgba(150, 150, 150, 1)',
+                'rgba(150, 150, 150, 1)',
+                'rgba(150, 150, 150, 1)',
+                'rgba(150, 150, 150, 1)',
+                'rgba(150, 150, 150, 1)',
+                'rgba(67, 56, 202, 1)'
+            ],
+            borderWidth: 1
+        }]
+    };
+
+    const videoDetectionData = {
+        labels: ['Sora', 'Morph', 'Gen2', 'HotShot', 'Lavie', 'Crafter'],
+        datasets: [
+        {
+            label: 'DeMamba (SOTA)',
+            data: [64.07, 96.02, 97.90, 75.39, 95.37, 97.97],
+            backgroundColor: 'rgba(191, 191, 191, 0.6)',
+            borderColor: 'rgba(150, 150, 150, 1)',
+            borderWidth: 1
+        },
+        {
+            label: 'IVY-Det (Ours)',
+            data: [100.0, 99.93, 99.96, 99.79, 99.71, 100.0],
+            backgroundColor: 'rgba(67, 56, 202, 0.8)',
+            borderColor: 'rgba(67, 56, 202, 1)',
+            borderWidth: 1
+        }]
+    };
+
+    const chartOptions = {
+        maintainAspectRatio: false,
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                suggestedMax: 100,
+                ticks: {
+                    callback: function(value) {
+                        return value + '%'
+                    }
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        let label = context.dataset.label || '';
+                        if (label) {
+                            label += ': ';
+                        }
+                        if (context.parsed.y !== null) {
+                            label += context.parsed.y.toFixed(2) + '%';
+                        }
+                        return label;
+                    }
+                }
+            }
+        }
+    };
+    
+    const videoChartOptions = {
+        maintainAspectRatio: false,
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                suggestedMax: 100,
+                 ticks: {
+                    callback: function(value) {
+                        return value
+                    }
+                }
+            }
+        },
+         plugins: {
+            legend: {
+                position: 'top',
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        let label = context.dataset.label || '';
+                        if (label) {
+                            label += ': ';
+                        }
+                        if (context.parsed.y !== null) {
+                            label += context.parsed.y.toFixed(2);
+                        }
+                        return label;
+                    }
+                }
+            }
+        }
+    };
+
+    // Chart instances
+    let imageChart, videoChart;
+
+    const ctxImage = document.getElementById('imageDetectionChart').getContext('2d');
+    imageChart = new Chart(ctxImage, {
+        type: 'bar',
+        data: imageDetectionData,
+        options: chartOptions
+    });
+
+    const ctxVideo = document.getElementById('videoDetectionChart').getContext('2d');
+
+    // Tab functionality
+    const btnImage = document.getElementById('btn-image');
+    const btnVideo = document.getElementById('btn-video');
+    const imagePerformance = document.getElementById('image-performance');
+    const videoPerformance = document.getElementById('video-performance');
+
+    btnImage.addEventListener('click', () => {
+        btnImage.classList.add('active');
+        btnVideo.classList.remove('active');
+        imagePerformance.classList.remove('hidden');
+        videoPerformance.classList.add('hidden');
+    });
+
+    btnVideo.addEventListener('click', () => {
+        btnVideo.classList.add('active');
+        btnImage.classList.remove('active');
+        videoPerformance.classList.remove('hidden');
+        imagePerformance.classList.add('hidden');
+        if (!videoChart) {
+             videoChart = new Chart(ctxVideo, {
+                type: 'bar',
+                data: videoDetectionData,
+                options: videoChartOptions
+            });
+        }
+    });
+    
+    // Training stages interaction
+    const stages = document.querySelectorAll('.stage-item');
+    stages.forEach(stage => {
+        stage.addEventListener('click', () => {
+            // Close all descriptions first
+            document.querySelectorAll('.stage-desc').forEach(desc => {
+                if(desc.parentElement !== stage) {
+                   desc.classList.add('hidden');
+                }
+            });
+            // Toggle the clicked one
+            const desc = stage.querySelector('.stage-desc');
+            desc.classList.toggle('hidden');
+        });
+    });
+
+    // Animate stats
+    function animateValue(obj, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString() + (obj.id === 'stat-samples' ? 'k+' : (obj.id === 'stat-eval' ? 'k+' : ''));
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    animateValue(document.getElementById('stat-samples'), 0, 150, 1500);
+    animateValue(document.getElementById('stat-eval'), 0, 18, 1500);
+    animateValue(document.getElementById('stat-dims'), 0, 12, 1500);
+    animateValue(document.getElementById('stat-modalities'), 0, 2, 1500);
+});
+</script>
+
+</body>
+</html>
