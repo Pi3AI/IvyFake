@@ -45,6 +45,6 @@ If you use Ivy-Fake or IVY-XDETECTOR in your research, please cite our paper:
 ```bibtex
 @article{jiang2025ivyfake,
   title     = {Ivy-Fake: A Unified Explainable Framework and Benchmark for Image and Video AIGC Detection},
-  author    = {Jiang, Changjiang and Dong, Wenhui and Zhang, Zhonghao and Yu, Fengchang and Peng, Wei},
+  author    = {Jiang, Changjiang and Zhang, Wayne and Zhang, Zhonghao and Yu, Fengchang and Peng, Wei},
   year      = {2025}
 }
