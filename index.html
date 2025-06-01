@@ -240,12 +240,16 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Methodology: IVY-XDETECTOR</h2>
+        <h2 class="title is-3">Detector: IVY-XDETECTOR</h2>
         <div class="content has-text-justified">
           <p>
             This chapter details the IVY-XDETECTOR, a multimodal large language model designed for robust and explainable AIGC detection. The architecture, based on the LLaVA paradigm and initialized with Ivy-VL-LLaVA weights, consists of a Visual Encoder (SigLIP), a Visual Projector, and a Large Language Model. It supports dynamic high-resolution image inputs and processes video frames while preserving temporal information. The model is trained using a progressive three-stage framework: initial video understanding, fine-tuning for AIGC detection, and joint optimization for both detection accuracy and high-quality, human-understandable explanations.
           </p>
         </div>
+          <div class="has-text-centered" style="margin-top:1em; margin-bottom:1em;">
+            <img src="static/images/figure4-Ivy-Fake_00.png" alt="IVY-FAKE Dataset Overview" style="max-width: 90%; height: auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <p class="is-size-7"><i>The three-stage training pipeline for Ivy-Detector, including general video understanding, detection instruction tuning, and interpretability instruction tuning.</i></p>
+          </div>
       </div>
     </div>
   </div>
@@ -276,37 +280,14 @@
             The paper introduces IVY-FAKE, the first unified, large-scale dataset for explainable AI-Generated Content (AIGC) detection across both images and videos, featuring extensive annotated samples with natural-language reasoning. Accompanying this, the Ivy Explainable Detector (IVY-XDETECTOR) is proposed, a vision-language architecture that jointly detects and explains synthetic content. The model sets new state-of-the-art benchmarks in AIGC detection and explainability, and the publicly released resources aim to provide a robust foundation for transparent and trustworthy multimodal analysis.
           </p>
         </div>
+          <div class="has-text-centered" style="margin-top:1em; margin-bottom:1em;">
+            <img src="static/images/figure5-vis_00.png" alt="IVY-FAKE Dataset Overview" style="max-width: 90%; height: auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <p class="is-size-7"><i>Showcase of the Video artifact detection</i></p>
+          </div>
       </div>
     </div>
   </div>
 </section>
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/figure4-Ivy-Fake_00.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          The three-stage training pipeline for Ivy-Detector, including general video understanding, detection instruction tuning, and interpretability instruction tuning.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/figure5-vis_00.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Showcase of the Video artifact detection.
-       </h2>
-     </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
 
 
 <!--BibTex citation -->
@@ -315,7 +296,7 @@
       <h2 class="title">BibTeX</h2>
       <pre><code>@article{jiang2025ivyfake,
   title     = {Ivy-Fake: A Unified Explainable Framework and Benchmark for Image and Video AIGC Detection},
-  author    = {Jiang, Changjiang and Dong, Wenhui and Zhang, Zhonghao and Yu, Fengchang and Peng, Wei},
+  author    = {Dong, Wenhui and Jiang, Changjiang and Zhang, Zhonghao and Yu, Fengchang and Peng, Wei},
   year      = {2025},
 }</code></pre>
     </div>
@@ -333,7 +314,6 @@
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
-
         </div>
       </div>
     </div>
