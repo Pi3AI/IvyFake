@@ -117,6 +117,15 @@
                   </a>
                 </span>
 
+              <span class="link-block">
+                <a href="https://pi3ai.github.io/IvyFake#leaderboard" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="height: 1.1em;">🏆</p>
+                  </span>
+                  <span>Leaderboard</span>
+                </a>
+              </span>
+
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
@@ -158,7 +167,7 @@
           <ul>
             <li><a href="#overview-section">IVY-FAKE Overview</a></li>
             <li><a href="#introduction-section">Introduction</a></li>
-            <li><a href="#dataset-section">IVY-FAKE Dataset</a></li>
+            <li><a href="#dataset-section">Dataset</a></li>
             <li><a href="#detector-section">Detector: IVY-XDETECTOR</a></li>
             <li><a href="#experiments-section">Experiments</a></li>
             <li><a href="#conclusion-section">Conclusion</a></li>
@@ -283,6 +292,283 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3" id="leaderboard">MLLM Leaderboard</h2>
+        <div class="content">
+          <p class="mt-3">
+            Performance metrics for various Multi-Modal Large Language Models (MLLMs) on Image and Video tasks. <br>
+            Models are ranked by the 'AVG' score in the 'GPT Assisted' category for Image tasks.
+          </p>
+          <div class="table-container">
+            <table class="table is-bordered is-striped is-narrow is-hoverable" id="results" style="margin-left: auto; margin-right: auto;">
+              <thead>
+                <tr>
+                  <th rowspan="3" style="vertical-align: middle;">#</th>
+                  <th rowspan="3" style="vertical-align: middle;">Model</th>
+                  <th rowspan="3" style="vertical-align: middle;">Model Params</th>
+                  <th rowspan="3" style="vertical-align: middle;">Date</th>
+                  <th colspan="2" style="text-align: center;">Overall</th>
+                  <th colspan="9" style="text-align: center;">Image</th>
+                  <th colspan="9" style="text-align: center;">Video</th>
+                </tr>
+                <tr>
+                  <th rowspan="3" style="text-align: center;">Auto Metrics (AVG)</th>
+                  <th rowspan="3" style="text-align: center;">GPT Assisted (AVG)</th>
+                  <th colspan="4" style="text-align: center;">Auto Metrics</th>
+                  <th colspan="5" style="text-align: center;">GPT Assisted</th>
+                  <th colspan="4" style="text-align: center;">Auto Metrics</th>
+                  <th colspan="5" style="text-align: center;">GPT Assisted</th>
+                </tr>
+                <tr>
+                  <th>Acc</th>
+                  <th>F1</th>
+                  <th>ROUGE-L</th>
+                  <th>SIM</th>
+                  <th>Com.</th>
+                  <th>Rel.</th>
+                  <th>Det.</th>
+                  <th>Exp.</th>
+                  <th>AVG</th>
+                  <th>Acc</th>
+                  <th>F1</th>
+                  <th>ROUGE-L</th>
+                  <th>SIM</th>
+                  <th>Com.</th>
+                  <th>Rel.</th>
+                  <th>Det.</th>
+                  <th>Exp.</th>
+                  <th>AVG</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="vertical-align: middle;">1</td>
+                  <td style="text-align: left; padding: 2px 10px;">
+                    <b>
+                      <a href="https://pi3ai.github.io/IvyFake" class="ext-link" style="font-size: 16px;">Ivy-xDet</a>
+                      <p style="font-size: 12px; color: #858383;">Pi3AI</p>
+                    </b>
+                  </td>
+                  <td>3B</td>
+                  <td>2025-06-02</td>
+                  <td>0.702</td>
+                  <td>4.130</td>
+                  <td><b>0.805</b></td>
+                  <td><b>0.802</b></td>
+                  <td><b>0.271</b></td>
+                  <td><b>0.767</b></td>
+                  <td><b>4.39</b></td>
+                  <td><b>4.21</b></td>
+                  <td><b>4.33</b></td>
+                  <td><b>4.54</b></td>
+                  <td><b>4.40</b></td>
+                  <td><b>0.945</b></td>
+                  <td><b>0.945</b></td>
+                  <td><b>0.303</b></td>
+                  <td><b>0.776</b></td>
+                  <td>3.76</td>
+                  <td>4.00</td>
+                  <td>3.71</td>
+                  <td>3.97</td>
+                  <td>3.86</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: middle;">2</td>
+                  <td style="text-align: left; padding: 2px 10px;">
+                    <b>
+                      <a href="https://platform.openai.com/docs/models/gpt-4o" class="ext-link" style="font-size: 16px;">GPT-4o</a>
+                      <p style="font-size: 12px; color: #858383;">Openai</p>
+                    </b>
+                  </td>
+                  <td>-</td>
+                  <td>2025-06-02</td>
+                  <td>0.605</td>
+                  <td>3.905</td>
+                  <td>0.766</td>
+                  <td>0.759</td>
+                  <td>0.155</td>
+                  <td>0.683</td>
+                  <td>3.69</td>
+                  <td>3.79</td>
+                  <td>3.67</td>
+                  <td>3.80</td>
+                  <td>3.74</td>
+                  <td>0.828</td>
+                  <td>0.813</td>
+                  <td>0.150</td>
+                  <td>0.682</td>
+                  <td>4.02</td>
+                  <td>4.13</td>
+                  <td>3.99</td>
+                  <td>4.12</td>
+                  <td>4.07</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: middle;">3</td>
+                  <td style="text-align: left; padding: 2px 10px;">
+                    <b>
+                      <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-flash?hl=en-us" class="ext-link" style="font-size: 16px;">Gemini 2.5 Flash</a>
+                      <p style="font-size: 12px; color: #858383;">Google</p>
+                    </b>
+                  </td>
+                  <td>-</td>
+                  <td>2025-06-02</td>
+                  <td>0.587</td>
+                  <td>3.590</td>
+                  <td>0.668</td>
+                  <td>0.656</td>
+                  <td>0.223</td>
+                  <td>0.709</td>
+                  <td>3.29</td>
+                  <td>3.33</td>
+                  <td>3.27</td>
+                  <td>3.33</td>
+                  <td>3.30</td>
+                  <td>0.787</td>
+                  <td>0.784</td>
+                  <td>0.188</td>
+                  <td>0.678</td>
+                  <td>3.85</td>
+                  <td>3.93</td>
+                  <td>3.82</td>
+                  <td>3.92</td>
+                  <td>3.88</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: middle;">4</td>
+                  <td style="text-align: left; padding: 2px 10px;">
+                    <b>
+                      <a href="https://platform.openai.com/docs/models/o4-mini" class="ext-link" style="font-size: 16px;">GPT-4o-mini</a>
+                      <p style="font-size: 12px; color: #858383;">Openai</p>
+                    </b>
+                  </td>
+                  <td>-</td>
+                  <td>2025-06-02</td>
+                  <td>0.529</td>
+                  <td>3.315</td>
+                  <td>0.653</td>
+                  <td>0.650</td>
+                  <td>0.149</td>
+                  <td>0.645</td>
+                  <td>3.21</td>
+                  <td>3.26</td>
+                  <td>3.21</td>
+                  <td>3.26</td>
+                  <td>3.23</td>
+                  <td>0.685</td>
+                  <td>0.672</td>
+                  <td>0.134</td>
+                  <td>0.645</td>
+                  <td>3.38</td>
+                  <td>3.42</td>
+                  <td>3.37</td>
+                  <td>3.42</td>
+                  <td>3.40</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: middle;">5</td>
+                  <td style="text-align: left; padding: 2px 10px;">
+                    <b>
+                      <a href="https://arxiv.org/pdf/2504.10479" class="ext-link" style="font-size: 16px;">InternVL3</a>
+                      <p style="font-size: 12px; color: #858383;">Shanghai AI Lab</p>
+                    </b>
+                  </td>
+                  <td>8B</td>
+                  <td>2025-06-02</td>
+                  <td>0.513</td>
+                  <td>3.095</td>
+                  <td>0.614</td>
+                  <td>0.605</td>
+                  <td>0.159</td>
+                  <td>0.680</td>
+                  <td>3.04</td>
+                  <td>3.07</td>
+                  <td>3.04</td>
+                  <td>3.07</td>
+                  <td>3.05</td>
+                  <td>0.632</td>
+                  <td>0.616</td>
+                  <td>0.165</td>
+                  <td>0.629</td>
+                  <td>3.13</td>
+                  <td>3.16</td>
+                  <td>3.12</td>
+                  <td>3.16</td>
+                  <td>3.14</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: middle;">6</td>
+                  <td style="text-align: left; padding: 2px 10px;">
+                    <b>
+                      <a href="https://arxiv.org/pdf/2502.13923" class="ext-link" style="font-size: 16px;">Qwen2.5-VL</a>
+                      <p style="font-size: 12px; color: #858383;">Alibaba</p>
+                    </b>
+                  </td>
+                  <td>7B</td>
+                  <td>2025-06-02</td>
+                  <td>0.484</td>
+                  <td>2.830</td>
+                  <td>0.556</td>
+                  <td>0.516</td>
+                  <td>0.199</td>
+                  <td>0.660</td>
+                  <td>2.73</td>
+                  <td>2.77</td>
+                  <td>2.73</td>
+                  <td>2.77</td>
+                  <td>2.75</td>
+                  <td>0.589</td>
+                  <td>0.527</td>
+                  <td>0.207</td>
+                  <td>0.621</td>
+                  <td>2.89</td>
+                  <td>2.94</td>
+                  <td>2.89</td>
+                  <td>2.89</td>
+                  <td>2.91</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: middle;">7</td>
+                  <td style="text-align: left; padding: 2px 10px;">
+                    <b>
+                      <a href="https://arxiv.org/pdf/2404.14219" class="ext-link" style="font-size: 16px;">Phi-3.5-Vision</a>
+                      <p style="font-size: 12px; color: #858383;">Microsoft</p>
+                    </b>
+                  </td>
+                  <td>4B</td>
+                  <td>2025-06-02</td>
+                  <td>0.332</td>
+                  <td>2.740</td>
+                  <td>0.560</td>
+                  <td>0.555</td>
+                  <td>0.092</td>
+                  <td>0.366</td>
+                  <td>2.66</td>
+                  <td>2.72</td>
+                  <td>2.66</td>
+                  <td>2.72</td>
+                  <td>2.69</td>
+                  <td>0.559</td>
+                  <td>0.479</td>
+                  <td>0.001</td>
+                  <td>0.046</td>
+                  <td>2.78</td>
+                  <td>2.79</td>
+                  <td>2.78</td>
+                  <td>2.79</td>
+                  <td>2.79</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
