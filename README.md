@@ -8,7 +8,7 @@
 
 **Ivy-Fake** is a novel, unified, and large-scale dataset specifically designed for explainable multimodal AI-Generated Content (AIGC) detection. It is the first large-scale benchmark for this purpose, covering both images and videos. The project also introduces **Ivy-XDetector**, a unified vision-language model that achieves state-of-the-art performance in detecting and explaining AI-generated images and videos.
 
-The rapid advancement of AIGC has led to hyper-realistic synthetic media, raising significant concerns about authenticity and misinformation. [cite: 1] Current detection methods often operate as black-box classifiers, lacking interpretability and unified support for different modalities. Ivy-Fake addresses these limitations by providing a comprehensive benchmark and an explainable detection framework.
+The rapid advancement of AIGC has led to hyper-realistic synthetic media, raising significant concerns about authenticity and misinformation. Current detection methods often operate as black-box classifiers, lacking interpretability and unified support for different modalities. Ivy-Fake addresses these limitations by providing a comprehensive benchmark and an explainable detection framework.
 
 ## Key Features
 
