@@ -61,25 +61,37 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://github.com/Pi3AI" target="_blank">*Wayne Zhang</a><sup>1</sup>,</span>
+                <a href="https://github.com/arnodjiang" target="_blank">*Changjiang Jiang</a>,</span>
                 <span class="author-block">
-                  <a href="https://github.com/arnodjiang" target="_blank">*Changjiang Jiang</a><sup>2</sup>,</span>
+                  <a href="https://github.com/Pi3AI" target="_blank">*Wenhui Dong</a>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Zhonghao Zhang</a><sup>1</sup>,</span>
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Zhonghao Zhang</a>,</span>
                   <span class="author-block">
-                    <a href="https://chenyangsi.top" target="_blank">Chenyang Si</a><sup>3</sup>,</span>
+                    <a href="https://chenyangsi.top" target="_blank">Chenyang Si</a>,</span>
                   <span class="author-block">
-                    <a href="http://39.103.203.133/member/52" target="_blank">Fengchang Yu</a><sup>2</sup>,</span>
+                    <a href="http://39.103.203.133/member/52" target="_blank">Fengchang Yu</a>,</span>
                   <span class="author-block">
-                    <a href="https://xiaoiker.github.io/" target="_blank">Wei Peng</a><sup>4</sup>,</span>
+                    <a href="https://xiaoiker.github.io/" target="_blank">Wei Peng</a>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=Be26Qu8AAAAJ&hl=zh-CN" target="_blank">Xinbin Yuan</a>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=On6HEc4AAAAJ&hl=zh-CN" target="_blank">Yifei Bi</a>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://xiaoiker.github.io/" target="_blank">Ming Zhao</a>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://xiaoiker.github.io/" target="_blank">Zian Zhou</a>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://caifeng-shan.github.io/" target="_blank">Caifeng Shan</a>,</span>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block"><sup>1</sup>\(\pi^3\) AI Lab</span><br/>
-                    <sup>2</sup>Wuhan University<br/>
-                    <sup>3</sup>Nanjing University<br/>
-                    <sup>4</sup>Stanford University<br/>
+                    <span class="author-block">\(\pi^3\) AI Lab</span><br/>
                     <sup>*</sup>Equal Contribution
                   </div>
 
@@ -180,10 +192,10 @@
         <h2 class="title is-3">IVY-FAKE Overview</h2>
         <div class="content has-text-justified">
           <p>
-            <strong>IVY-FAKE</strong> is the first unified benchmark and explainable framework for detecting AI-generated images and videos. It provides over 150,000 annotated training samples and 18,700 evaluation examples, each paired with human-readable explanations. We introduce <strong>IVY-XDETECTOR</strong>, a vision-language model capable of multimodal AIGC detection with high accuracy and transparency. Our approach offers detailed spatial and temporal reasoning, enabling robust identification of synthetic content in real-world scenarios.
+            <strong>IVY-FAKE</strong> is the first unified benchmark and explainable framework for detecting AI-generated images and videos. It provides over 100,000 annotated training samples and 5,000 evaluation examples, each paired with human-readable explanations. We introduce <strong>IVY-XDETECTOR</strong>, a vision-language model capable of multimodal AIGC detection with high accuracy and transparency. Our approach offers detailed spatial and temporal reasoning, enabling robust identification of synthetic content in real-world scenarios.
           </p>
           <p>
-            The rapid advancement of Artificial Intelligence Generated Content (AIGC) has produced hyper-realistic synthetic media, raising concerns about authenticity and integrity. Current detection methods are often black-box, lack interpretability, and don't support unified image and video detection, hindering transparency and deployment. To address this, we introduce <strong>IVY-FAKE</strong>, a large-scale, unified dataset for explainable multimodal AIGC detection with over 150,000 annotated training samples and 18,700 evaluation examples, each with natural-language reasoning. We also propose <strong>IVY-XDETECTOR</strong>, a unified vision-language model for state-of-the-art explainable detection of both image and video content.
+            The rapid advancement of Artificial Intelligence Generated Content (AIGC) has produced hyper-realistic synthetic media, raising concerns about authenticity and integrity. Current detection methods are often black-box, lack interpretability, and don't support unified image and video detection, hindering transparency and deployment. To address this, we introduce <strong>IVY-FAKE</strong>, a large-scale, unified dataset for explainable multimodal AIGC detection with over 100,000 annotated training samples and 5,000 evaluation examples, each with natural-language reasoning. We also propose <strong>IVY-XDETECTOR</strong>, a unified vision-language model for state-of-the-art explainable detection of both image and video content.
           </p>
         </div>
       </div>
@@ -201,7 +213,7 @@
             Advancements in AIGC, driven by models like DALL-E, Imagen, Stable Diffusion, and SORA, have led to highly realistic synthetic images and videos, posing challenges to content authenticity and public trust. Most current AIGC detection methods are binary classifiers with limited interpretability and often lack support for diverse generators or modalities. While Multimodal Large Language Models (MLLMs) show promise for explainable detection, existing benchmarks are inadequate, often lacking video data or sufficient annotation depth.
           </p>
           <p>
-            To overcome these limitations, we introduce <strong>IVY-FAKE</strong>, a comprehensive benchmark with diverse multimodal data (94,781 images, 54,967 videos for training) and rich, explainable annotations. Building on this, our <strong>IVY-XDETECTOR</strong> model excels at identifying and explaining spatial and temporal generative artifacts in both images and videos. Our key contributions are a unified vision-language detector and the first large-scale benchmark for explainable multimodal AIGC detection.
+            To overcome these limitations, we introduce <strong>IVY-FAKE</strong>, a comprehensive benchmark with diverse multimodal data and rich, explainable annotations. Building on this, our <strong>IVY-XDETECTOR</strong> model excels at identifying and explaining spatial and temporal generative artifacts in both images and videos. Our key contributions are a unified vision-language detector and the first large-scale benchmark for explainable multimodal AIGC detection.
           </p>
         </div>
       </div>
@@ -216,17 +228,17 @@
         <h2 class="title is-3">IVY-FAKE Dataset</h2>
         <div class="content has-text-justified">
           <p>
-            The <strong>IVY-FAKE dataset</strong> is designed for explainable multimodal AIGC detection, containing 94,781 training images, 54,967 training videos, and around 18,700 total test samples. It features diverse content (animals, objects, DeepFakes, etc.) and sources (GANs, Diffusion models, Transformers) and is kept current by collecting new AIGC content.
+            The <strong>IVY-FAKE dataset</strong> is designed for explainable multimodal AIGC detection, containing 100K+ training images, around 5,000 total test samples. It features diverse content (animals, objects, DeepFakes, etc.) and sources (GANs, Diffusion models, Transformers) and is kept current by collecting new AIGC content.
           </p>
           <p>
-             Video data (approx. 110,000 clips) was sourced from public benchmarks like GenVideo and LOKI, and web-crawled platforms, including outputs from models like SORA and Stable Video Diffusion. Image data (approx. 110,000 images) was similarly collected from public datasets like FakeClue and WildFake, and web sources, covering GANs and Diffusion models. A stratified sampling strategy ensures balanced representation.
+             Video data was sourced from public benchmarks like GenVideo and LOKI, and web-crawled platforms, including outputs from models like SORA and Stable Video Diffusion. Image data was similarly collected from public datasets like FakeClue and WildFake, and web sources, covering GANs and Diffusion models. A stratified sampling strategy ensures balanced representation.
           </p>
           <p>
             Explainable annotations were generated using Gemini 2.5 Pro with a knowledge distillation process and a structured template requiring reasoning before conclusion (<code>&lt;think&gt;...&lt;/think&gt;&lt;conclusion&gt;...&lt;/conclusion&gt;</code>). Gemini was provided with ground-truth labels and a prompt like "This {file_type} is {label}. Explain the reason.". Explanations are categorized into Spatial Features (8 sub-dimensions) and Temporal Features (4 sub-dimensions, video-only). IVY-FAKE uniquely integrates explainable annotations across both image and video modalities, unlike prior datasets which are often limited in scope or modality.
           </p>
           <div class="has-text-centered" style="margin-top:1em; margin-bottom:1em;">
-            <img src="static/images/figure2-data-static-v2_00.png" alt="IVY-FAKE Dataset Overview" style="max-width: 90%; height: auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-            <p class="is-size-7"><i>Figure 2: Overview of the IVY-FAKE dataset creation process showing data domains, labeling prompts, and annotation structure.</i></p>
+            <img src="static/images/tab_example.png" alt="IVY-FAKE Dataset Overview" style="max-width: 90%; height: auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <p class="is-size-7"><i>Table 1: Example of IVY-FAKE annotations.</i></p>
           </div>
         </div>
       </div>
@@ -241,12 +253,12 @@
         <h2 class="title is-3">Detector: IVY-XDETECTOR</h2>
         <div class="content has-text-justified">
           <p>
-            This chapter details the IVY-XDETECTOR, a multimodal large language model designed for robust and explainable AIGC detection. The architecture, based on the LLaVA paradigm and initialized with Ivy-VL-LLaVA weights, consists of a Visual Encoder (SigLIP), a Visual Projector, and a Large Language Model. It supports dynamic high-resolution image inputs and processes video frames while preserving temporal information. The model is trained using a progressive three-stage framework: initial video understanding, fine-tuning for AIGC detection, and joint optimization for both detection accuracy and high-quality, human-understandable explanations.
+            This chapter details the IVY-XDETECTOR, a multimodal large language model designed for robust and explainable AIGC detection. The architecture, based on the Qwen2.5-VL paradigm and initialized with Qwen2.5-VL-7B weights. It supports dynamic high-resolution image inputs and processes video frames while preserving temporal information. The model is trained using a progressive two-stage framework: initial video understanding, fine-tuning for AIGC detection, and joint optimization for both detection accuracy and high-quality, human-understandable explanations.
           </p>
         </div>
           <div class="has-text-centered" style="margin-top:1em; margin-bottom:1em;">
             <img src="static/images/figure4-Ivy-Fake_00.png" alt="IVY-FAKE Dataset Overview" style="max-width: 90%; height: auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-            <p class="is-size-7"><i>The three-stage training pipeline for Ivy-Detector, including general video understanding, detection instruction tuning, and interpretability instruction tuning.</i></p>
+            <p class="is-size-7"><i>The two-stage training pipeline for IVY-XDETECTOR, including general video understanding, detection instruction tuning, and interpretability instruction tuning.</i></p>
           </div>
       </div>
     </div>
@@ -299,7 +311,7 @@
           </p>
           <p>
             These scripts support performance evaluation for both image and video modalities, including: <br>
-            - Automatic metric computation (Acc, F1, ROUGE-L, etc.) <br>
+            - Automatic metric computation (Acc, F1, ROUGE-L, Bert-Score.) <br>
             - GPT-assisted explanation grading <br>
             - Final ranking and reporting for MLLM benchmarks
           </p>
@@ -313,275 +325,186 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-full has-text-centered content">
-        <h2 class="title is-3" id="leaderboard">MLLM Leaderboard</h2>
+
+        <h2 class="title is-3" id="leaderboard">MLLM Performance Comparison</h2>
+
         <div class="content">
           <p class="mt-3">
-            Performance metrics for various Multi-Modal Large Language Models (MLLMs) on Image and Video tasks. <br>
-            Models are ranked by the 'AVG' score.
+            Performance comparison of models on Image and Video tasks.  
+            “Auto Metrics” include Acc, F1, ROUGE-L, SIM.  
+            “GPT Assisted” includes Comprehensiveness, Relevance, Detail, Explanation.
           </p>
+
           <div class="table-container">
-            <table class="table is-bordered is-striped is-narrow is-hoverable" id="results" style="margin-left: auto; margin-right: auto;">
+            <table class="table is-bordered is-striped is-narrow is-hoverable" style="margin-left:auto;margin-right:auto;">
               <thead>
                 <tr>
-                  <th rowspan="3" style="vertical-align: middle;">#</th>
                   <th rowspan="3" style="vertical-align: middle;">Model</th>
-                  <th rowspan="3" style="vertical-align: middle;">Model Params</th>
-                  <th rowspan="3" style="vertical-align: middle;">Date</th>
-                  <th colspan="2" style="text-align: center;">Overall</th>
-                  <th colspan="9" style="text-align: center;">Image</th>
-                  <th colspan="9" style="text-align: center;">Video</th>
+                  <th colspan="2" style="text-align:center;">Image</th>
+                  <th colspan="2" style="text-align:center;">Video</th>
+                  <th colspan="2" style="text-align:center;">Overall</th>
                 </tr>
+
                 <tr>
-                  <th rowspan="3" style="text-align: center;">Auto Metrics (AVG)</th>
-                  <th rowspan="3" style="text-align: center;">GPT Assisted (AVG)</th>
-                  <th colspan="4" style="text-align: center;">Auto Metrics</th>
-                  <th colspan="5" style="text-align: center;">GPT Assisted</th>
-                  <th colspan="4" style="text-align: center;">Auto Metrics</th>
-                  <th colspan="5" style="text-align: center;">GPT Assisted</th>
+                  <th style="text-align:center;">Auto Metrics</th>
+                  <th style="text-align:center;">GPT Assisted</th>
+                  <th style="text-align:center;">Auto Metrics</th>
+                  <th style="text-align:center;">GPT Assisted</th>
+                  <th style="text-align:center;">Auto Metrics</th>
+                  <th style="text-align:center;">GPT Assisted</th>
                 </tr>
+
                 <tr>
-                  <th>Acc</th>
-                  <th>F1</th>
-                  <th>ROUGE-L</th>
-                  <th>SIM</th>
-                  <th>Com.</th>
-                  <th>Rel.</th>
-                  <th>Det.</th>
-                  <th>Exp.</th>
-                  <th>AVG</th>
-                  <th>Acc</th>
-                  <th>F1</th>
-                  <th>ROUGE-L</th>
-                  <th>SIM</th>
-                  <th>Com.</th>
-                  <th>Rel.</th>
-                  <th>Det.</th>
-                  <th>Exp.</th>
-                  <th>AVG</th>
+                  <th>Acc/F1/ROUGE-L/SIM</th>
+                  <th>Com./Rel./Det./Exp.</th>
+                  <th>Acc/F1/ROUGE-L/SIM</th>
+                  <th>Com./Rel./Det./Exp.</th>
+                  <th>Acc/F1/ROUGE-L/SIM</th>
+                  <th>Com./Rel./Det./Exp.</th>
                 </tr>
               </thead>
+
               <tbody>
+
+                <!-- Closed-source -->
+                <tr><td colspan="7" style="text-align:center;"><i><b>Closed-source MLLMs</b></i></td></tr>
+
                 <tr>
-                  <td style="vertical-align: middle;">1</td>
-                  <td style="text-align: left; padding: 2px 10px;">
-                    <b>
-                      <a href="https://pi3ai.github.io/IvyFake" class="ext-link" style="font-size: 16px;">Ivy-xDet</a>
-                      <p style="font-size: 12px; color: #858383;">Pi3AI</p>
-                    </b>
-                  </td>
-                  <td>3B</td>
-                  <td>2025-06-02</td>
-                  <td><b>0.702</b></td>
-                  <td><b>4.130</b></td>
-                  <td><b>0.805</b></td>
-                  <td><b>0.802</b></td>
-                  <td><b>0.271</b></td>
-                  <td><b>0.767</b></td>
-                  <td><b>4.39</b></td>
-                  <td><b>4.21</b></td>
-                  <td><b>4.33</b></td>
-                  <td><b>4.54</b></td>
-                  <td><b>4.40</b></td>
-                  <td><b>0.945</b></td>
-                  <td><b>0.945</b></td>
-                  <td><b>0.303</b></td>
-                  <td><b>0.776</b></td>
-                  <td>3.76</td>
-                  <td>4.00</td>
-                  <td>3.71</td>
-                  <td>3.97</td>
-                  <td>3.86</td>
+                  <td><b>GPT-4o</b></td>
+                  <td>0.725/0.723/0.108/0.525</td>
+                  <td>2.34/3.20/2.04/3.26</td>
+                  <td>0.448/0.579/0.072/0.451</td>
+                  <td>1.79/2.35/1.67/2.40</td>
+                  <td>0.587/0.663/0.090/0.488</td>
+                  <td>2.07/2.78/1.85/2.83</td>
                 </tr>
+
                 <tr>
-                  <td style="vertical-align: middle;">2</td>
-                  <td style="text-align: left; padding: 2px 10px;">
-                    <b>
-                      <a href="https://platform.openai.com/docs/models/gpt-4o" class="ext-link" style="font-size: 16px;">GPT-4o</a>
-                      <p style="font-size: 12px; color: #858383;">Openai</p>
-                    </b>
-                  </td>
-                  <td>-</td>
-                  <td>2025-06-02</td>
-                  <td>0.605</td>
-                  <td>3.905</td>
-                  <td>0.766</td>
-                  <td>0.759</td>
-                  <td>0.155</td>
-                  <td>0.683</td>
-                  <td>3.69</td>
-                  <td>3.79</td>
-                  <td>3.67</td>
-                  <td>3.80</td>
-                  <td>3.74</td>
-                  <td>0.828</td>
-                  <td>0.813</td>
-                  <td>0.150</td>
-                  <td>0.682</td>
-                  <td>4.02</td>
-                  <td>4.13</td>
-                  <td>3.99</td>
-                  <td>4.12</td>
-                  <td>4.07</td>
+                  <td><b>Gemini-2.5-Flash</b></td>
+                  <td><u>0.747</u>/<u>0.737</u>/<u>0.263</u>/<b>0.733</b></td>
+                  <td><b>3.94</b>/<b>4.11</b>/<b>4.04</b>/<b>4.09</b></td>
+                  <td><u>0.810</u>/<u>0.811</u>/<u>0.246</u>/<u>0.723</u></td>
+                  <td><b>4.00</b>/<b>4.37</b>/<b>4.03</b>/<b>4.36</b></td>
+                  <td><u>0.779</u>/<u>0.776</u>/<u>0.254</u>/<b>0.728</b></td>
+                  <td><b>3.97</b>/<b>4.24</b>/<b>4.04</b>/<b>4.22</b></td>
                 </tr>
+
+                <!-- Open-source -->
+                <tr><td colspan="7" style="text-align:center;"><i><b>Open-source MLLMs</b></i></td></tr>
+
+                <!-- 7B models -->
+                <tr><td colspan="7"><i>7B-Parameters Models</i></td></tr>
+
                 <tr>
-                  <td style="vertical-align: middle;">3</td>
-                  <td style="text-align: left; padding: 2px 10px;">
-                    <b>
-                      <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-flash?hl=en-us" class="ext-link" style="font-size: 16px;">Gemini 2.5 Flash</a>
-                      <p style="font-size: 12px; color: #858383;">Google</p>
-                    </b>
-                  </td>
-                  <td>-</td>
-                  <td>2025-06-02</td>
-                  <td>0.587</td>
-                  <td>3.590</td>
-                  <td>0.668</td>
-                  <td>0.656</td>
-                  <td>0.223</td>
-                  <td>0.709</td>
-                  <td>3.29</td>
-                  <td>3.33</td>
-                  <td>3.27</td>
-                  <td>3.33</td>
-                  <td>3.30</td>
-                  <td>0.787</td>
-                  <td>0.784</td>
-                  <td>0.188</td>
-                  <td>0.678</td>
-                  <td>3.85</td>
-                  <td>3.93</td>
-                  <td>3.82</td>
-                  <td>3.92</td>
-                  <td>3.88</td>
+                  <td><b>InternVL3.5-8B</b></td>
+                  <td>0.605/0.602/0.194/0.680</td>
+                  <td>2.83/3.49/2.69/3.32</td>
+                  <td>0.574/0.588/0.188/0.664</td>
+                  <td>2.75/3.35/2.68/3.28</td>
+                  <td>0.589/0.596/0.191/0.672</td>
+                  <td>2.79/3.42/2.69/3.30</td>
                 </tr>
+
                 <tr>
-                  <td style="vertical-align: middle;">4</td>
-                  <td style="text-align: left; padding: 2px 10px;">
-                    <b>
-                      <a href="https://platform.openai.com/docs/models/o4-mini" class="ext-link" style="font-size: 16px;">GPT-4o-mini</a>
-                      <p style="font-size: 12px; color: #858383;">Openai</p>
-                    </b>
-                  </td>
-                  <td>-</td>
-                  <td>2025-06-02</td>
-                  <td>0.529</td>
-                  <td>3.315</td>
-                  <td>0.653</td>
-                  <td>0.650</td>
-                  <td>0.149</td>
-                  <td>0.645</td>
-                  <td>3.21</td>
-                  <td>3.26</td>
-                  <td>3.21</td>
-                  <td>3.26</td>
-                  <td>3.23</td>
-                  <td>0.685</td>
-                  <td>0.672</td>
-                  <td>0.134</td>
-                  <td>0.645</td>
-                  <td>3.38</td>
-                  <td>3.42</td>
-                  <td>3.37</td>
-                  <td>3.42</td>
-                  <td>3.40</td>
+                  <td><b>MiMo-VL-7B</b></td>
+                  <td>0.662/0.637/0.121/0.593</td>
+                  <td>1.99/2.80/1.85/2.89</td>
+                  <td>0.778/0.783/0.112/0.580</td>
+                  <td>2.04/2.91/1.90/3.19</td>
+                  <td>0.720/0.715/0.116/0.586</td>
+                  <td>2.01/2.86/1.87/3.04</td>
                 </tr>
+
                 <tr>
-                  <td style="vertical-align: middle;">5</td>
-                  <td style="text-align: left; padding: 2px 10px;">
-                    <b>
-                      <a href="https://arxiv.org/pdf/2504.10479" class="ext-link" style="font-size: 16px;">InternVL3</a>
-                      <p style="font-size: 12px; color: #858383;">Shanghai AI Lab</p>
-                    </b>
-                  </td>
-                  <td>8B</td>
-                  <td>2025-06-02</td>
-                  <td>0.513</td>
-                  <td>3.095</td>
-                  <td>0.614</td>
-                  <td>0.605</td>
-                  <td>0.159</td>
-                  <td>0.680</td>
-                  <td>3.04</td>
-                  <td>3.07</td>
-                  <td>3.04</td>
-                  <td>3.07</td>
-                  <td>3.05</td>
-                  <td>0.632</td>
-                  <td>0.616</td>
-                  <td>0.165</td>
-                  <td>0.629</td>
-                  <td>3.13</td>
-                  <td>3.16</td>
-                  <td>3.12</td>
-                  <td>3.16</td>
-                  <td>3.14</td>
+                  <td><b>Qwen2.5-VL-7B</b></td>
+                  <td>0.013/0.026/0.006/0.264</td>
+                  <td>1.02/1.03/1.01/1.52</td>
+                  <td>0.092/0.159/0.015/0.280</td>
+                  <td>1.14/1.23/1.12/2.21</td>
+                  <td>0.053/0.096/0.010/0.272</td>
+                  <td>1.08/1.13/1.07/1.86</td>
                 </tr>
+
                 <tr>
-                  <td style="vertical-align: middle;">6</td>
-                  <td style="text-align: left; padding: 2px 10px;">
-                    <b>
-                      <a href="https://arxiv.org/pdf/2502.13923" class="ext-link" style="font-size: 16px;">Qwen2.5-VL</a>
-                      <p style="font-size: 12px; color: #858383;">Alibaba</p>
-                    </b>
-                  </td>
-                  <td>7B</td>
-                  <td>2025-06-02</td>
-                  <td>0.484</td>
-                  <td>2.830</td>
-                  <td>0.556</td>
-                  <td>0.516</td>
-                  <td>0.199</td>
-                  <td>0.660</td>
-                  <td>2.73</td>
-                  <td>2.77</td>
-                  <td>2.73</td>
-                  <td>2.77</td>
-                  <td>2.75</td>
-                  <td>0.589</td>
-                  <td>0.527</td>
-                  <td>0.207</td>
-                  <td>0.621</td>
-                  <td>2.89</td>
-                  <td>2.94</td>
-                  <td>2.89</td>
-                  <td>2.89</td>
-                  <td>2.91</td>
+                  <td><b>LLaVA-OneVision-1.5-8B</b></td>
+                  <td>0.500/0.333/0.080/0.499</td>
+                  <td>1.51/2.62/1.49/2.38</td>
+                  <td>0.500/0.333/0.068/0.481</td>
+                  <td>1.49/2.26/1.37/2.19</td>
+                  <td>0.500/0.333/0.074/0.490</td>
+                  <td>1.50/2.44/1.43/2.28</td>
                 </tr>
+
                 <tr>
-                  <td style="vertical-align: middle;">7</td>
-                  <td style="text-align: left; padding: 2px 10px;">
-                    <b>
-                      <a href="https://arxiv.org/pdf/2404.14219" class="ext-link" style="font-size: 16px;">Phi-3.5-Vision</a>
-                      <p style="font-size: 12px; color: #858383;">Microsoft</p>
-                    </b>
-                  </td>
-                  <td>4B</td>
-                  <td>2025-06-02</td>
-                  <td>0.332</td>
-                  <td>2.740</td>
-                  <td>0.560</td>
-                  <td>0.555</td>
-                  <td>0.092</td>
-                  <td>0.366</td>
-                  <td>2.66</td>
-                  <td>2.72</td>
-                  <td>2.66</td>
-                  <td>2.72</td>
-                  <td>2.69</td>
-                  <td>0.559</td>
-                  <td>0.479</td>
-                  <td>0.001</td>
-                  <td>0.046</td>
-                  <td>2.78</td>
-                  <td>2.79</td>
-                  <td>2.78</td>
-                  <td>2.79</td>
-                  <td>2.79</td>
+                  <td><b>MiniCPM-V-4.5</b></td>
+                  <td>0.666/0.680/0.169/0.637</td>
+                  <td>3.20/3.93/3.06/3.60</td>
+                  <td>0.491/0.505/0.152/0.627</td>
+                  <td>2.83/3.66/2.76/3.36</td>
+                  <td>0.579/0.610/0.161/0.632</td>
+                  <td>3.01/3.80/2.91/3.48</td>
                 </tr>
+
+                <!-- 3B models -->
+                <tr><td colspan="7"><i>3B-Parameters Models</i></td></tr>
+
+                <tr>
+                  <td><b>Qwen2.5-VL-3B</b></td>
+                  <td>0.641/0.612/0.023/0.391</td>
+                  <td>1.19/1.33/1.18/3.28</td>
+                  <td>0.689/0.686/0.017/0.381</td>
+                  <td>1.42/1.56/1.40/3.68</td>
+                  <td>0.665/0.652/0.020/0.386</td>
+                  <td>1.31/1.45/1.29/3.48</td>
+                </tr>
+
+                <tr>
+                  <td><b>Gemma-3-4B-IT</b></td>
+                  <td>0.408/0.477/0.170/0.576</td>
+                  <td>2.55/3.36/2.46/3.11</td>
+                  <td>0.396/0.482/0.149/0.561</td>
+                  <td>2.30/3.03/2.37/2.95</td>
+                  <td>0.402/0.482/0.159/0.568</td>
+                  <td>2.43/3.19/2.42/3.03</td>
+                </tr>
+
+                <tr>
+                  <td><b>InternVL3.5-2B</b></td>
+                  <td>0.602/0.573/0.177/0.648</td>
+                  <td>2.62/3.29/2.51/3.13</td>
+                  <td>0.435/0.459/0.159/0.631</td>
+                  <td>2.46/3.16/2.42/2.99</td>
+                  <td>0.518/0.518/0.168/0.640</td>
+                  <td>2.54/3.22/2.47/3.06</td>
+                </tr>
+
+                <tr>
+                  <td><b>InternVL3.5-4B</b></td>
+                  <td>0.651/0.652/0.190/0.660</td>
+                  <td>3.01/3.68/2.95/3.58</td>
+                  <td>0.614/0.617/0.181/0.653</td>
+                  <td>2.93/3.61/2.83/3.52</td>
+                  <td>0.632/0.635/0.186/0.656</td>
+                  <td>2.97/3.64/2.89/3.55</td>
+                </tr>
+
+                <!-- Baseline (Ivy-xDetector) -->
+                <tr>
+                  <td><b>Ivy-xDetector</b></td>
+                  <td><b>0.831</b>/<b>0.831</b>/<b>0.283</b>/<u>0.714</u></td>
+                  <td><u>3.54</u>/<u>4.04</u>/<u>3.61</u>/<u>3.85</u></td>
+                  <td><b>0.897</b>/<b>0.897</b>/<b>0.300</b>/<b>0.726</b></td>
+                  <td><u>3.72</u>/<u>4.12</u>/<u>3.75</u>/<u>4.24</u></td>
+                  <td><b>0.864</b>/<b>0.864</b>/<b>0.291</b>/<u>0.720</u></td>
+                  <td><u>3.63</u>/<u>4.08</u>/<u>3.68</u>/<u>4.05</u></td>
+                </tr>
+
               </tbody>
             </table>
+
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -593,8 +516,9 @@
       <h2 class="title">BibTeX</h2>
       <pre><code>@article{jiang2025ivyfake,
   title     = {Ivy-Fake: A Unified Explainable Framework and Benchmark for Image and Video AIGC Detection},
-  author    = {Dong, Wenhui and Jiang, Changjiang and Zhang, Zhonghao and Yu, Fengchang and Peng, Wei},
+  author    = {Changjiang Jiang and Wenhui Dong and Zhonghao Zhang and Chenyang Si and Fengchang Yu and Wei Peng and Xinbin Yuan and Yifei Bi and Ming Zhao and Zian Zhou and Caifeng Shan},
   year      = {2025},
+  url       = {https://arxiv.org/abs/2506.00979}
 }</code></pre>
     </div>
 </section>
