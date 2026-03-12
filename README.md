@@ -2,6 +2,7 @@
 
 [![Paper](https://img.shields.io/badge/paper-arXiv-B31B1B.svg)](https://arxiv.org/abs/2506.00979)
 [![Hugging Face Datasets](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Datasets-blue)](https://huggingface.co/datasets/AI-Safeguard/Ivy-Fake)
+[![Hugging Face Model](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue)](https://huggingface.co/AI-Safeguard/Ivy-Fake)
 [![GitHub Code](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Pi3AI/Ivy-Fake) [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
 
 ![Intro-image](static/images/figure1-poster-v2_00.png)
@@ -38,6 +39,63 @@ The Ivy-Fake dataset can be accessed on Hugging Face:
 ### Code
 The code for the IVY-XDETECTOR and related experiments can be found in this repository:
 [https://github.com/Pi3AI/IvyFake](https://github.com/Pi3AI/IvyFake) *(Further instructions on setting up the environment, running the code, and training/evaluating models will be provided here or in a separate `CONTRIBUTING.md` or documentation files.)*
+
+### Inference in our models
+
+```python
+from transformers import Qwen2_5_VLForConditionalGeneration, AutoTokenizer, AutoProcessor
+from qwen_vl_utils import process_vision_info
+
+model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
+    "AI-Safeguard/Ivy-Fake",
+    torch_dtype=torch.bfloat16,
+    attn_implementation="flash_attention_2",
+    device_map="auto",
+)
+
+processor = AutoProcessor.from_pretrained("AI-Safeguard/Ivy-Fake")
+
+messages = [
+    {
+        "role": "system",
+        "content": "You are an AI-generated content detector. Given a single media (image or video), classify it as real or fake. Provide detailed reasoning inside the <think>...</think> tags, including your step-by-step thought process. Your output must begin with <think>\n and end with </conclusion>. Then output exactly one word in lowercase—either real or fake—wrapped in <conclusion>...</conclusion>. Do not include any other words. If uncertain, choose the most likely class."
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "image",
+                "image": "https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen-VL/assets/demo.jpeg",
+            },
+            {"type": "text", "text": "Is the image real or fake?"},
+        ],
+    }
+]
+
+# Preparation for inference
+text = processor.apply_chat_template(
+    messages, tokenize=False, add_generation_prompt=True
+)
+image_inputs, video_inputs = process_vision_info(messages)
+inputs = processor(
+    text=[text],
+    images=image_inputs,
+    videos=video_inputs,
+    padding=True,
+    return_tensors="pt",
+)
+inputs = inputs.to("cuda")
+
+# Inference: Generation of the output
+generated_ids = model.generate(**inputs, max_new_tokens=2048)
+generated_ids_trimmed = [
+    out_ids[len(in_ids) :] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
+]
+output_text = processor.batch_decode(
+    generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
+)
+print(output_text)
+```
 
 ## Citation
 
