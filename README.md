@@ -1,12 +1,14 @@
 # Ivy-Fake: A Unified Explainable Framework and Benchmark for Image and Video AIGC Detection
 
-<div align="center">
+[![Paper](https://img.shields.io/badge/paper-arXiv-B31B1B.svg)](https://arxiv.org/abs/2506.00979)
 
-<!-- <p align="center"> -->
-<img src="https://github.com/Pi3AI/IvyFake/blob/main/static/images/i1IpcZasaYt_bb-6BD9jg.png" alt="Logo">
-<!-- </p> -->
+[![Hugging Face Datasets](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Datasets-blue)](https://huggingface.co/datasets/AI-Safeguard/Ivy-Fake)
 
-</div>
+[![Hugging Face Model](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue)](https://huggingface.co/AI-Safeguard/Ivy-Fake)
+
+[![GitHub Code](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Pi3AI/Ivy-Fake) [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
+
+![Intro-image](static/images/figure1-poster-v2_00.png)
 
 **Ivy-Fake** is a novel, unified, and large-scale dataset specifically designed for **explainable multimodal AI-Generated Content (AIGC) detection**. It represents the first large-scale benchmark covering both images and videos for this purpose.
 
