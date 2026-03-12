@@ -1,11 +1,7 @@
-Certainly! Here is the refined and professionally polished version of your README in English. I have improved the layout, standardized the badges, and optimized the code snippet for better usability.
-
----
-
 # Ivy-Fake: A Unified Explainable Framework and Benchmark for Image and Video AIGC Detection
 
 <div align="center">
-
+PI3Lab
 </div>
 
 ---
