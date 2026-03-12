@@ -1,7 +1,19 @@
 # Ivy-Fake: A Unified Explainable Framework and Benchmark for Image and Video AIGC Detection
 
 <div align="center">
+
+<p align="center">
+<a href="">
+<img src="https://cdn-avatars.huggingface.co/v1/production/uploads/6751ae913f59c62f77583757/i1IpcZasaYt_bb-6BD9jg.png" alt="Logo" width="120">
+</a>
+</p>
+
 PI3Lab
+
+<p align="center">
+<b>The first unified benchmark for explainable AIGC detection across images and videos.</b>
+</p>
+
 </div>
 
 ---
