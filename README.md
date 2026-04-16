@@ -1,11 +1,16 @@
 # [ICMR 2026]Ivy-Fake: A Unified Explainable Framework and Benchmark for Image and Video AIGC Detection
 
+<div align="center">
+
 <h4>
 <a href="https://arxiv.org/abs/2506.00979">📄 arXiv Paper</a> &nbsp; 
 <a href="https://pi3ai.github.io/IvyFake">🌐 Project Page</a> &nbsp; 
 <a href="https://huggingface.co/AI-Safeguard/Ivy-Fake">🤗 Hugging Face Models</a>
 <a href="https://huggingface.co/datasets/AI-Safeguard/Ivy-Fake">🤗 Hugging Face Datasets</a>
 </h4>
+
+</div>
+
 
 ## News
 
