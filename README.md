@@ -15,7 +15,7 @@
 ## News
 
 - 🔥 `2026.2` We release our models 🚀[**Ivy-xDetector**](https://huggingface.co/AI-Safeguard/Ivy-Fake) for **AI-generated image and video detection**🔥🔥🔥!
-- 🔥 `2025.12` The [**Cold Start Data**](https://huggingface.co/datasets/AI-Safeguard/Ivy-Fake) is released.
+- 🔥 `2025.12` The [**Ivy-Fake**](https://huggingface.co/datasets/AI-Safeguard/Ivy-Fake) is released.
 - 🔥 `2025.5` We release the [**Arxiv**](https://arxiv.org/abs/2506.00979)
 
 ## 🚀 Getting Started
