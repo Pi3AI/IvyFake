@@ -7,12 +7,11 @@
 
 Alongside the dataset, we introduce **Ivy-XDetector**, a unified vision-language model (VLM) that achieves state-of-the-art performance in detecting and explaining AI-generated media by identifying complex temporal and spatial artifacts.
 
-## ✨ Key Features
+## 📅 Timeline
 
-* **Unified Multimodal Dataset:** Contains over **150,000** richly annotated training samples and **18,700** evaluation examples across both image and video modalities.
-* **Explainable Reasoning:** Each sample is accompanied by detailed natural-language reasoning, moving beyond binary labels to explain *why* a piece of content is flagged as synthetic.
-* **IVY-XDETECTOR Model:** A state-of-the-art VLM architecture capable of generating human-readable forensic reports for AIGC detection.
-* **Real-World Diversity:** Includes content from cutting-edge architectures (GANs, Diffusion, Transformers) and authentic media from diverse real-world contexts.
+- **March 2026**: Presentation at **ICMR 2026 Conference**
+- **Oct 2025**: Public release of the **dataset and model** on HuggingFace
+- **June 2025**: Released the first version of **Ivy-Fake** on arXiv
 
 ---
 
